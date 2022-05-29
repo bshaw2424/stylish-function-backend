@@ -1,0 +1,51 @@
+<%- include ("../../../partials/header") %> <%- include
+("../../admin/mobile-nav") %>
+<section class="index-container">
+  <%- include ("../../admin/admin-nav") %>
+  <div class="container">
+    <form
+      class="form form-group"
+      action="/articles/<%= articles.slug %>?_method=PATCH"
+      method="POST"
+    >
+      <div class="title-container">
+        <h1><%= articles.title %></h1>
+      </div>
+      <div class="article-section">
+        <label for="article-title">Article Title</label>
+        <input
+          type="text"
+          id="article-title"
+          class="browser-default form-field"
+          name="Article[title]"
+          value="<%= articles.title %>"
+          required
+        />
+        <label for="article-sub-description">Sub Description</label>
+        <textarea
+          id="article-sub-description"
+          class="browser-default form-field"
+          name="Article[sub_description]"
+          required
+        >
+          <%= articles.sub_description %>
+          </textarea
+        >
+        <label for="article-description">Article Description</label>
+        <textarea
+          id="article-description"
+          class="browser-default form-field"
+          name="Article[description]"
+          required
+        >
+          <%= articles.description %>
+        </textarea>
+      </div>
+      <div class="button-container">
+        <button type="submit" class="btn go-button">update</button>
+        <a href="/articles" class="static-button btn">cancel</a>
+      </div>
+    </form>
+  </div>
+</section>
+<%- include ("../../../partials/footer") %>

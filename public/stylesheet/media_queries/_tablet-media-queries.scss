@@ -1,0 +1,21 @@
+@import "../variables";
+
+h1 {
+  font-family: $heading-text;
+}
+.card-title {
+  h3 a,
+  p {
+    font-family: $text-font;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  @import "../navigation/mobile-navbar";
+  @import "../index/index-tablet";
+  @import "../articles/_tablet.scss";
+  @import "../showpage/tablet";
+  @import "../static/contactUs-tablet";
+  @import "../admin/tablet";
+  @import "../messages/messages-tablet";
+}

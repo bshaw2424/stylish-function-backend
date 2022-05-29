@@ -1,0 +1,98 @@
+@import "../variables";
+
+// index contact section
+.message-center-header {
+  .container {
+    margin-top: 0;
+    .message-center_h1 {
+      color: $title-text;
+      margin: 2rem 0;
+      padding: 0;
+    }
+    .delete-container {
+      @include flex-direction(column);
+      .input-field {
+        margin: 0;
+        padding: 0;
+      }
+      .check-all-button-message-counter {
+        font-size: 1.4rem;
+        @include text-align(center);
+        padding: 0.75rem 0;
+      }
+    }
+    .collection {
+      height: 100%;
+      a {
+        .collection-item-info {
+          @include flex-space-between(space-between, center);
+
+          form {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// contact show page section
+.message-page {
+  .message-details {
+    margin: 0;
+    .container {
+      height: auto;
+      margin-top: 0;
+      h2 {
+        @include text-align(center);
+      }
+      .message-subject {
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        .contact-showpage-subject {
+          b {
+            padding-right: 0.5rem;
+            display: block;
+          }
+        }
+      }
+      .collection-group_container {
+        border: 1px solid #333;
+        padding: 0.75rem 1.5rem;
+
+        .contact-email {
+          margin: 0;
+        }
+        .contact-showpage-date b {
+          align-self: flex-end;
+        }
+      }
+      .contact-message {
+        margin: 1.5rem 0;
+        @include text-align(center);
+      }
+      .button-container {
+        form,
+        button {
+          width: 100%;
+        }
+
+        .static-button {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.footer-navigation {
+  .container {
+    ul {
+      @include flex-direction(column);
+      align-items: flex-start;
+      li {
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+}

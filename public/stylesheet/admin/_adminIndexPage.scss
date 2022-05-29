@@ -1,0 +1,20 @@
+@import "../variables";
+.index-container {
+  display: flex;
+  .index-display {
+    h1 {
+      background-color: $white;
+      font-size: 2rem;
+      @include text-align(justify);
+      margin: 1rem 0;
+      color: #333;
+    }
+    span {
+      font-size: 1.5rem;
+    }
+    h1,
+    span {
+      padding: 0 2rem;
+    }
+  }
+}

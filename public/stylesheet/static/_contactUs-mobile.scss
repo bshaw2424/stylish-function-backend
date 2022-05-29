@@ -1,0 +1,33 @@
+.contact-page {
+  padding: 0;
+  .contact-page_header {
+    padding: 0;
+    .contact-title {
+      background: none;
+    }
+  }
+}
+
+// contact success page
+.success-page {
+  .success-body {
+    margin: 0 1rem;
+    height: 75vh;
+    @include flex-space-between(center, center);
+    flex-direction: column;
+    h1 {
+      @include text-align(center);
+    }
+    p {
+      font-size: 1.7rem;
+    }
+    div {
+      width: 100%;
+      @include flex-direction(column);
+      a {
+        margin-bottom: 1rem;
+        width: 90%;
+      }
+    }
+  }
+}

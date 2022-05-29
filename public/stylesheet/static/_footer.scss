@@ -1,0 +1,25 @@
+.footer-section {
+  // background: hsl(200, 100%, 50%);
+  background: $nav-text;
+}
+
+.footer-navigation {
+  ul {
+    @include flex-align(center, center);
+    align-content: center;
+    padding: 1rem 0;
+    li {
+      margin-right: 1rem;
+      a {
+        color: $white;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .copyright {
+    @extend ul;
+    color: $white;
+    font-size: 1.2rem;
+    background: inherit;
+  }
+}

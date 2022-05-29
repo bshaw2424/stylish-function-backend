@@ -1,0 +1,258 @@
+@import "../variables";
+
+.title-container {
+  width: 100%;
+  h1 {
+    @include text-align(center);
+    padding-top: 1rem;
+    a {
+      background-color: none;
+      color: $title-text;
+    }
+  }
+}
+
+.filter-search {
+  @include flex-space-between(space-between, center);
+  min-width: 100%;
+  border: 1px solid #333;
+  padding: 0 0.75rem;
+  a {
+    display: inline-block;
+    margin: 1rem 0;
+    width: 50%;
+    margin-left: 2.5rem;
+  }
+  #filter-search {
+    height: 36px;
+    width: 50%;
+  }
+}
+
+.article-container {
+  box-shadow: none;
+  margin-top: 1rem;
+  .card {
+    .card-content {
+      padding: 1rem 0;
+      .card-title {
+        margin: 0;
+        padding: 0;
+      }
+      .button-container {
+        width: 95%;
+        @include flex();
+        .go-button {
+          display: inline-block;
+          min-width: 50%;
+          margin: 0;
+        }
+        form {
+          width: 100%;
+          margin-left: 1rem;
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// products section
+.product-count {
+  padding-left: 0.75rem;
+}
+
+.product-section {
+  input[type="file"] {
+    border: none;
+  }
+}
+
+.index-container {
+  margin-top: 0;
+  .container {
+    padding: 0;
+  }
+  .card-image {
+    img {
+      @include images(100%, 100%, cover);
+    }
+  }
+  .card-content {
+    a {
+      display: inline-block;
+      margin: 0 1rem;
+      padding: 0;
+    }
+    .card-details {
+      .card-title {
+        font-size: 2em;
+        margin: 0.75rem 0;
+      }
+      .card-price {
+        font-size: 1.5em;
+        margin: 0.75rem 0;
+      }
+    }
+  }
+  .button-container {
+    min-width: 100%;
+    padding: 1rem 0;
+  }
+}
+
+// mobile admin forms
+.form-group {
+  width: 100%;
+  @include flex-direction(column);
+  .title-container {
+    h1 {
+      color: $white;
+      border: none;
+    }
+  }
+  .button-container {
+    @include flex();
+    padding: 0;
+    a {
+      min-width: 50%;
+    }
+    .go-button {
+      margin-right: 2rem;
+      width: 50%;
+    }
+  }
+}
+
+// tablet nav bar
+.admin-mobile-nav_links {
+  width: 60%;
+  min-height: 100%;
+  border: 1px solid $title-text-hover;
+  transition: all 0.4s;
+  position: fixed;
+  @include flex-direction(column);
+  top: 5rem;
+  left: 0;
+  z-index: 1;
+  background: $white;
+
+  li {
+    padding-left: 1rem;
+    line-height: 2.5;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+
+    a {
+      display: inline-block;
+      width: 100%;
+      color: $title-text;
+      &:not(.btn):hover {
+        color: $title-text-hover;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.image-update {
+  width: 100%;
+  margin: 3.5rem auto;
+  .image-update_container {
+    @include flex-align(center, center);
+    flex-direction: column;
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin: 1rem 0;
+    }
+    .image-container {
+      width: 100%;
+      height: 525px;
+      img {
+        @include images(100%, 100%, cover);
+      }
+    }
+    form {
+      margin: 1rem auto;
+      width: 100%;
+      @include flex-align(center, center);
+      flex-direction: column;
+      .photo-update-container {
+        display: inline-block;
+        margin: 1rem auto;
+        border: none;
+        input {
+          display: inline-block;
+          width: 50%;
+          padding: 0.5rem 0;
+          border: none;
+        }
+      }
+      .button-container {
+        width: 100%;
+        @include flex();
+        .go-button,
+        .static-button {
+          width: 95%;
+        }
+        .go-button {
+          margin-right: 5%;
+        }
+      }
+    }
+  }
+}
+
+.admin-login-form {
+  padding: 1rem;
+  height: 100%;
+  @include flex-align(center, center);
+  flex-direction: column;
+  h1 {
+    background: $go-button;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    margin: 0;
+    color: $white;
+  }
+  form {
+    width: 100%;
+    @include flex-direction(column);
+    justify-content: center;
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      display: inline-block;
+    }
+    label {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    button {
+      display: inline-block;
+      width: 70%;
+      margin: 1rem 15%;
+    }
+  }
+}
+
+//admin product showpage
+.index-container {
+  .container {
+    @include flex-space-between(center, center);
+    flex-direction: column;
+    .card-content {
+      .card-title {
+        @include text-align(center);
+        border: none;
+      }
+      .card-details {
+        border-bottom: 1px solid #333;
+      }
+    }
+  }
+}

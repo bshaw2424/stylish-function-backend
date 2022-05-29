@@ -1,0 +1,78 @@
+.contact-us,
+.featured {
+  @include flex;
+}
+
+.contact-page {
+  max-width: 100%;
+  @include flex-align(center, center);
+  .contact-page_header {
+    padding: 2rem 0;
+    p {
+      @include text-align(center);
+    }
+    #contact-title {
+      margin: 0;
+      font-size: 3.2rem;
+      text-align: center;
+    }
+  }
+
+  .contact-page_form {
+    @include flex-direction(column);
+    .product-input {
+      margin-bottom: 1rem;
+      padding: 0.4rem 0.7rem;
+    }
+    label {
+      font-size: 1rem;
+    }
+    label:first-child {
+      margin-top: 1rem;
+    }
+    textarea {
+      min-height: 6rem;
+      max-height: 10rem;
+      padding: 0;
+      resize: none;
+    }
+    .button-container {
+      @include flex-align(center, center);
+      margin: 1rem 0;
+      .btn-submit {
+        font-size: 1rem;
+        width: 100%;
+        background-color: $go-button;
+        &:hover {
+          background-color: $go-button-hover;
+        }
+      }
+    }
+    .g-recaptcha {
+      @include flex-align(center, center);
+      margin: 1rem 0;
+    }
+  }
+}
+
+// contact success page
+.success-page {
+  .success-body {
+    height: 75vh;
+    @include flex-space-between(center, center);
+    flex-direction: column;
+    h1 {
+      margin: 0;
+    }
+    p {
+      font-size: 1.7rem;
+    }
+    div {
+      width: 40%;
+      @include flex-space-between(space-between, center);
+      a {
+        width: 100%;
+      }
+    }
+  }
+}

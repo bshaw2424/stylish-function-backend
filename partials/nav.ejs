@@ -1,0 +1,26 @@
+<nav class="index-navigation">
+  <section class="index-navigation-container">
+    <i class="material-icons hide-on-large-only" id="hamburger-nav-button"
+      >menu</i
+    >
+    <div class="logo-container">
+      <a class="logo" href="/">
+        <img src="../../../../images/mobile-logo.jpg" alt="website logo" />
+      </a>
+    </div>
+    <ul class="index-navigation-links hidden">
+      <li><a href="/articles">Articles</a></li>
+      <li><a href="/contact-us">Contact</a></li>
+      <li><a href="/about-us">About Us</a></li>
+    </ul>
+  </section>
+</nav>
+
+<script>
+  const hamburgerNav = document.getElementById("hamburger-nav-button");
+  const navLinks = document.querySelector(".index-navigation-links");
+
+  hamburgerNav.addEventListener("click", () => {
+    navLinks.classList.toggle("hidden");
+  });
+</script>

@@ -1,0 +1,25 @@
+.article-container {
+  @include flex-direction(column);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  margin: 2rem 0;
+}
+.card-container {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+h1 {
+  letter-spacing: 4px;
+}
+.card-title {
+  border-bottom: 1px solid $border;
+  padding-bottom: 0.5rem;
+}
+@media screen and (min-width: 1025px) {
+  @import "../navigation/xl-desktop-navbar";
+  @import "../index/index-xl-desktop";
+  @import "../articles/xl-desktop";
+  @import "../showpage/xl-desktop";
+  @import "../static/contactUs-xl-desktop";
+  @import "../admin/xl-desktop";
+  @import "../index/index";
+  @import "../messages/messages-xl-desktop";
+}

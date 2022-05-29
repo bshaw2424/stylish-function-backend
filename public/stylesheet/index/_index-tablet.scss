@@ -1,0 +1,70 @@
+@import "../variables";
+
+.index-navigation {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.index-navigation-links {
+  top: 76px;
+  width: 60%;
+}
+.index-navigation .index-navigation-container .logo img {
+  width: 100%;
+}
+
+.row {
+  margin: 0;
+}
+
+.hero-section_title-container {
+  p {
+    font-size: 3rem;
+    max-width: 100%;
+  }
+}
+
+.index-articles {
+  .container {
+    margin-top: 0;
+    h1 {
+      @include text-align(center);
+    }
+
+    .card-container {
+      @include flex-direction(column);
+      margin-bottom: 2rem;
+      box-shadow: $box-shadow;
+      .card {
+        margin: 0;
+        @include flex();
+        .card-image {
+          height: 200px;
+          width: 100%;
+          img {
+            @include images(100%, 100%, cover);
+          }
+        }
+        .card-content {
+          padding: 1rem 1rem 1.5rem;
+          .card-title {
+            @include flex-space-between(space-between, center);
+            font-size: 2rem;
+            border-bottom: none;
+            margin-top: 0;
+            padding: 0;
+          }
+        }
+      }
+    }
+    .button-container {
+      width: 70%;
+      margin: 0 auto;
+      a {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

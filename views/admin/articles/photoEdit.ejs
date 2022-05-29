@@ -1,0 +1,27 @@
+<%- include ("../../../partials/header") %> <%- include
+("../../admin/mobile-nav") %>
+<section class="image-update">
+  <div class="image-update_container container">
+    <h1>Edit Photo - <%= articles.title %></h1>
+    <div class="image-container">
+      <img src="<%= articles.image.url %>" alt="" />
+    </div>
+    <form
+      action="/articles/<%= articles.slug %>/photo?_method=PATCH"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <input
+        class="photo-update-container"
+        type="file"
+        name="Article[image]"
+        required
+      />
+      <div class="button-container">
+        <button type="submit" class="go-button btn">update</button>
+        <a href="/articles" class="static-button btn">cancel</a>
+      </div>
+    </form>
+  </div>
+</section>
+<%- include ("../../../partials/footer") %>

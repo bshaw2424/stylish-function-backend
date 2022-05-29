@@ -1,0 +1,65 @@
+<%- include ("../../../partials/header") %> <%- include
+("../../admin/mobile-nav")%>
+<section class="index-container">
+  <%- include ("../../admin/admin-nav") %>
+  <div class="container">
+    <div class="title-container">
+      <h1><a href="/articles"><%= articles.title %></a></h1>
+    </div>
+    <div class="filter-search">
+      <span class="product-count"
+        >Product(s) Total - <%= articles.products.length %>
+      </span>
+      <a
+        href="/articles/<%= articles.slug %>/products/new"
+        class="btn go-button"
+        >Add Product</a
+      >
+    </div>
+
+    <div class="article-container">
+      <div class="row">
+        <% for(const product of articles.products) { %>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="<%= product.image.url %>" alt="<%= product.image %>" />
+              <div class="overlay-icon">
+                <a
+                  href="/articles/<%= articles.slug %>/products/<%= product.slug %>/photo-edit"
+                  class="btn"
+                  >update photo</a
+                >
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">
+                <a
+                  href="/articles/<%= articles.slug %>/products/<%= product.slug %>"
+                >
+                  <%= product.title %>
+                </a>
+              </h3>
+              <p><%= product.description %></p>
+              <div class="button-container">
+                <a
+                  href="/articles/<%= articles.slug %>/products/<%= product.slug %>/edit"
+                  class="btn go-button"
+                  >Edit</a
+                >
+                <form
+                  action="/articles/<%= articles.slug %>/products/<%= product.slug %>?_method=DELETE"
+                  method="POST"
+                >
+                  <button class="btn delete-button">delete</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include ("../../../partials/footer") %>

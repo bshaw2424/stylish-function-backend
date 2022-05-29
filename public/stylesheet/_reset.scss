@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after,
+ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  li {
+    list-style: none;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  color: #333;
+  text-transform: $text-capitalize;
+  font-family: $text-font;
+}
+
+.back {
+  background-color: $back-button;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $back-button-hover;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h4 {
+  margin: 0;
+}
+
+h4,
+.purchase-information span {
+  font-size: 1.3rem;
+}
+
+.filter-title:hover {
+  cursor: pointer;
+}
+
+.display-header-title,
+.affiliate-disclaimer-container a,
+.description-title,
+.copyright,
+.index-featured-title {
+  text-transform: $text-capitalize;
+}

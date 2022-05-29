@@ -1,0 +1,93 @@
+<%- include ("../../../partials/header") %><%- include
+("../../admin/mobile-nav") %>
+
+<section class="message-page col s12">
+  <%- include ("../../admin/admin-nav") %>
+  <!-- filter section -->
+  <div class="message-center-header">
+    <div class="container">
+      <h1 class="message-center_h1">Messages</h1>
+      <!-- collection container -->
+      <div class="delete-container collection with-header">
+        <div class="check-all-button-message-counter">
+          <span> Messages: <%= descendingSort.length %> </span>
+        </div>
+        <div class="input-field">
+          <div style="width: 65%">
+            <ul
+              id="message-filter"
+              class="message-filter-container"
+              style="
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                background: white;
+              "
+            >
+              <li>
+                <a href="/messages/sortAsc/asc" class="message-ascending-button"
+                  >oldest</a
+                >
+              </li>
+              -
+              <li>
+                <a
+                  href="/messages/sortDesc/desc"
+                  class="message-descending-button"
+                  >newest</a
+                >
+              </li>
+            </ul>
+            <!-- <label for="message-filter">Sort By:</label> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- individual message body section -->
+      <% if( descendingSort.length > 0) { %>
+      <div class="collection">
+        <% descendingSort.forEach(sort =>{ %>
+        <a
+          href="/messages/<%= sort._id %>"
+          id="message-container"
+          class="collection-item"
+        >
+          <div class="collection-item-info">
+            <div class="collection-group">
+              <span><%= sort.name %></span>
+            </div>
+            <div class="collection-group collection-group_subject">
+              <span class="message"> <%= sort.subject %></span>
+            </div>
+            <div class="collection-group collection-group_date">
+              <span class="date"
+                ><%= sort.created_on.toLocaleDateString() %></span
+              >
+            </div>
+            <form
+              class="message-delete-button"
+              action="/messages/<%= sort._id %>?_method=DELETE"
+              method="POST"
+            >
+              <button
+                class="material-icons no-visibility message-center_delete"
+              >
+                delete
+              </button>
+            </form>
+          </div>
+        </a>
+        <% }) %>
+        <!-- end of message body container -->
+      </div>
+      <% } else { %>
+      <div class="display-message-container">
+        <h1 class="display-message"><%= sortMessage %></h1>
+      </div>
+      <% } %>
+      <!-- end of collection container -->
+    </div>
+  </div>
+</section>
+<script src="../../../js/scripts.js"></script>
+<%- include ("../../../partials/footer") %>

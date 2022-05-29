@@ -1,0 +1,55 @@
+@import "../variables";
+
+.contact-page {
+  height: 840px;
+  padding: 2rem 0;
+  .container {
+    .contact-page_header {
+      padding: 0;
+      p {
+        @include text-align(left);
+        margin: 2rem 0;
+        font-size: 1.5rem;
+        font-family: $text-font;
+      }
+    }
+  }
+}
+
+.button-container {
+  @include flex-align(center, center);
+  min-width: 100%;
+  margin: 1rem 0;
+  .btn-submit {
+    font-size: 1rem;
+    max-width: 70%;
+    background-color: $go-button;
+    &:hover {
+      background-color: $go-button-hover;
+    }
+  }
+}
+// contact success page
+.success-page {
+  .success-body {
+    margin: 0 1rem;
+    height: 75vh;
+    @include flex-space-between(center, center);
+    flex-direction: column;
+    h1 {
+      @include text-align(center);
+    }
+    p {
+      font-size: 1.7rem;
+    }
+    div {
+      width: 50%;
+      @include flex-space-between(center, center);
+      a {
+        &:first-child() {
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+}

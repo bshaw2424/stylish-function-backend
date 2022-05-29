@@ -1,0 +1,38 @@
+.container {
+  margin-top: 2rem;
+  .row {
+    margin-top: 1rem;
+  }
+}
+
+.article-section {
+  h1 {
+    @include text-align(center);
+    font-size: 3rem;
+    margin: 0;
+  }
+}
+
+.article-container {
+  box-shadow: none;
+  .card {
+    box-shadow: $box-shadow;
+    .card-content {
+      padding: 0 1rem 1.5rem 1rem;
+      .card-title {
+        @include flex-align(space-between, center);
+        border: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        h3 {
+          width: 100%;
+          margin: 0;
+          a {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

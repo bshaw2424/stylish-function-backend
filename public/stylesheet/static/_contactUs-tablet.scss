@@ -1,0 +1,41 @@
+@import "../variables";
+
+.contact-page {
+  height: 840px;
+  padding: 2rem 0;
+  .container {
+    .contact-page_header {
+      padding: 0;
+      p {
+        @include text-align(left);
+        margin: 2rem 0;
+        font-size: 1.5rem;
+        font-family: $text-font;
+      }
+    }
+  }
+}
+
+// contact success page
+.success-page {
+  .success-body {
+    margin: 0 1rem;
+    height: 75vh;
+    @include flex-space-between(center, center);
+    flex-direction: column;
+    h1 {
+      @include text-align(center);
+    }
+    p {
+      font-size: 1.7rem;
+    }
+    div {
+      width: 100%;
+      @include flex-direction(column);
+      a {
+        margin-bottom: 1rem;
+        width: 70%;
+      }
+    }
+  }
+}

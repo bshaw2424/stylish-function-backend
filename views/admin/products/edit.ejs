@@ -1,0 +1,77 @@
+<%- include ("../../../partials/header") %><%- include
+("../../admin/mobile-nav") %>
+
+<section class="index-container">
+  <% include ("../../admin/admin-nav") %>
+  <div class="container">
+    <form
+      action="/articles/<%= article.slug %>/products/<%= product.slug %>?_method=PATCH"
+      method="POST"
+      class="form form-group"
+      enctype="multipart/form-data"
+    >
+      <div class="title-container">
+        <h1><%= product.title %></h1>
+      </div>
+      <div class="product-section">
+        <label for="product-title">Product Title</label>
+        <input
+          type="text"
+          name="Product[title]"
+          id="product-title"
+          class="browser-default form-field"
+          value="<%= product.title %>"
+        />
+
+        <label for="product-price">Product Price</label>
+        <input
+          type="text"
+          name="Product[price]"
+          id="product-price"
+          class="browser-default form-field"
+          value="<%= product.price %>"
+        />
+
+        <label for="key-features">Key Features</label>
+        <textarea
+          name="Product[key_features]"
+          id="key-features"
+          cols="30"
+          rows="10"
+          class="form-field"
+        >
+         <%= product.key_features %>
+        </textarea>
+
+        <label for="drawbacks">Drawbacks</label>
+        <textarea
+          name="Product[drawbacks]"
+          id="drawbacks"
+          cols="30"
+          rows="10"
+          class="form-field"
+        >
+          <%= product.drawbacks %>
+        </textarea>
+
+        <label for="product-description">Product Description</label>
+        <textarea
+          name="Product[description]"
+          id="product-description"
+          cols="30"
+          rows="10"
+          class="form-field"
+        >
+         <%= product.description %>
+        </textarea>
+      </div>
+      <div class="button-container">
+        <button class="btn go-button" id="add-a-product-button">save</button>
+        <a href="/articles/<%= article.slug %>" class="btn static-button"
+          >cancel</a
+        >
+      </div>
+    </form>
+  </div>
+</section>
+<%- include ("../../../partials/footer") %>

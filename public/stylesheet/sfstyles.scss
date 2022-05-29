@@ -1,0 +1,370 @@
+@import "variables";
+@import "reset";
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-space-between($justify, $align) {
+  @include flex();
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-align($justify, $align) {
+  @include flex();
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-direction($direction) {
+  @include flex();
+  flex-direction: $direction;
+}
+
+@mixin box-shadow($shadow) {
+  box-shadow: $shadow;
+}
+
+@mixin border($border, $size, $type, $color) {
+  #{border}: $size $type $color;
+}
+
+@mixin images($width, $height, $display) {
+  width: $width;
+  height: $height;
+  object-fit: $display;
+}
+
+@mixin text-align($alignment) {
+  text-align: $alignment;
+}
+
+//admin scss
+@import "admin/adminNavigation";
+@import "admin/adminIndexPage";
+
+// index scss
+@import "navigation/indexNavigation";
+
+// static scsss
+@import "messages/messages-mobile";
+@import "messages/messages-tablet";
+@import "static/contactUs";
+@import "static/forms";
+@import "static/aboutUs";
+@import "static/footer";
+
+// media queries scss
+
+@import "media_queries/xl-desktop-media-queries";
+@import "media_queries/desktop-media-queries";
+@import "media_queries/tablet-media-queries";
+@import "media_queries/phone-media-queries";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $title-text;
+}
+h1 {
+  letter-spacing: 0.2rem;
+  background: none;
+  margin: 1rem 0;
+  color: $title-text;
+  @include text-align(center);
+}
+.card-title h3 {
+  margin: 1rem 0;
+}
+form {
+  h1 {
+    color: $white;
+    padding: 1.5rem 0;
+  }
+  label {
+    padding-bottom: 0.5rem;
+  }
+  #main-image {
+    border: none;
+  }
+  .button-container {
+    margin: 1.5rem 0;
+  }
+}
+
+::placeholder {
+  @include text-align(center);
+}
+
+.hero-section_image-container {
+  position: relative;
+  img {
+    max-width: 100%;
+  }
+
+  .hero-section_title-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    @include flex-align(center, center);
+    p {
+      color: $white;
+    }
+  }
+}
+
+.card-title {
+  color: $title-text;
+  a {
+    color: $title-text;
+    &:hover {
+      color: $title-text-hover;
+    }
+  }
+}
+
+.title-container i.material-icons {
+  display: block;
+}
+
+.btn,
+button {
+  border: none;
+}
+
+.btn,
+input,
+textarea,
+h1 {
+  border-radius: 0.5rem;
+  padding: 0 10px;
+}
+
+input,
+textarea {
+  border: 1px solid $border;
+  &:focus {
+    border: 1px solid $go-button;
+  }
+}
+
+.go-button {
+  background-color: $go-button;
+  &:hover {
+    background-color: $go-button-hover;
+  }
+}
+
+.delete-button {
+  background-color: $delete-button;
+  &:hover {
+    background-color: $delete-button-hover;
+  }
+}
+
+.static-button {
+  background-color: $static-button;
+  color: $nav-text;
+  outline: 1px solid $border-color;
+  @include box-shadow(none);
+  &:hover {
+    background-color: $static-button-hover;
+    @include box-shadow(none);
+  }
+}
+
+.card {
+  @include box-shadow(none);
+}
+
+.collection-group_subject::first-letter {
+  text-transform: capitalize;
+}
+
+.show-delete-button {
+  display: block;
+}
+
+#footer-section,
+.navigation {
+  background: $nav-background;
+}
+
+.copyright {
+  color: $aside-text;
+}
+
+.index-navigation-links {
+  transition: all 0.3s;
+  a {
+    font-size: 1.5em;
+    transition: all 0.3s linear;
+    &:hover {
+      background: none;
+      border-bottom: 6px solid $go-button;
+      color: $title-text-hover;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.dash-board-container ul a {
+  font-size: 1.3em;
+}
+
+.text-area,
+.input-field {
+  padding: 10px;
+}
+
+.text-area {
+  height: 8rem;
+  width: 100%;
+  resize: none;
+}
+
+.input-field {
+  display: inline-block;
+}
+
+.product-count {
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+.about-us_heading {
+  text-align: center;
+  width: 100%;
+}
+.about-us_description {
+  margin: 0 auto;
+  p {
+    font-size: 1.3em;
+  }
+}
+
+.disclaimer h1,
+.affiliate-disclaimer h1,
+.external-links-disclaimer h1,
+.about-us_heading,
+#contact-title {
+  background: #333;
+  color: white;
+  padding: 1rem 1rem;
+}
+
+.filter-search {
+  margin: 0.75rem 0;
+}
+.show {
+  display: block;
+}
+.visible {
+  visibility: visible;
+}
+.no-visibility {
+  visibility: hidden;
+}
+
+.display-message {
+  font-size: 2rem;
+  text-align: center;
+}
+.hide {
+  display: none;
+}
+.hidden {
+  transform: translateX(-100%);
+}
+.scroll {
+  overflow: hidden;
+}
+.body-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.logout {
+  width: 100%;
+  border-top: 1px solid $border;
+  .btn {
+    display: inline-block;
+    max-width: 30%;
+    border-radius: 5%;
+    padding-left: 1rem;
+    margin-top: 1rem;
+    color: white;
+  }
+}
+.admin-mobile-nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 5rem;
+  background-color: $nav-text;
+  @include flex-space-between(space-between, center);
+  color: $white;
+  .hamburger {
+    padding-left: 1rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  h1 {
+    margin: 0;
+    color: $white;
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  a {
+    text-transform: uppercase;
+  }
+}
+
+.card-image {
+  height: 350px;
+  img {
+    @include images(100%, 100%, cover);
+    position: relative;
+  }
+  .overlay-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    a {
+      position: absolute;
+      bottom: 0.75rem;
+      right: 0.75rem;
+    }
+  }
+}
+
+.hero-section_title-container {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  p {
+    text-transform: capitalize;
+    padding: 10px 8px;
+    text-align: center;
+    font-family: $heading-text;
+    .highlight {
+      color: yellow;
+    }
+  }
+}
+
+.index-navigation {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}

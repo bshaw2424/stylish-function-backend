@@ -1,0 +1,34 @@
+<%- include ("../../../partials/header") %><%- include
+("../../admin/mobile-nav") %>
+<section class="index-container">
+  <% include ("../../admin/admin-nav") %>
+  <div class="container">
+    <div class="product-container">
+      <div class="card-image">
+        <img src="<%= product.image.url %>" alt="<%= product.title %>" />
+      </div>
+      <div class="card-content">
+        <div class="card-details">
+          <h3 class="card-title"><%= product.title %></h3>
+          <span class="card-price">
+            <strong>
+              $<%=
+              priceConvert.convertPriceWithComma(product.price.toFixed(2))%>
+            </strong>
+          </span>
+        </div>
+        <p class="product-description"><%= product.description %></p>
+        <div class="button-container">
+          <a
+            class="btn go-button"
+            href="https://bit.ly/3gaosfY"
+            target="_blank"
+          >
+            get more information
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include ("../../../partials/footer") %>

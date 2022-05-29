@@ -1,0 +1,54 @@
+.index-navigation .index-navigation-container .logo img {
+  width: 100%;
+}
+
+.row {
+  margin: 0;
+}
+
+.hero-section_title-container {
+  p {
+    font-size: 3.4rem;
+    max-width: 60%;
+  }
+}
+
+.index-articles {
+  h1 {
+    @include text-align(center);
+  }
+
+  .card-container {
+    @include flex-direction(column);
+    box-shadow: $box-shadow;
+    margin: 2rem 0;
+    .card {
+      @include flex();
+      padding: 0;
+      .card-image {
+        height: 200px;
+        width: 100%;
+        img {
+          @include images(100%, 100%, cover);
+        }
+      }
+      .card-content {
+        padding: 1rem 1rem 1.5rem;
+        .card-title {
+          border: none;
+          margin: 0;
+          font-size: 2em;
+          @include text-align(justify);
+        }
+      }
+    }
+  }
+  .button-container {
+    width: 100%;
+    margin-bottom: 2rem;
+    @include flex-align(center, center);
+    a {
+      width: 70%;
+    }
+  }
+}

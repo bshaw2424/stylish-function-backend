@@ -1,0 +1,41 @@
+.index-navigation {
+  position: relative;
+  height: 100%;
+  box-shadow: none;
+  position: sticky;
+  top: 0;
+  background-color: $white;
+  z-index: 3;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+  i.material-icons {
+    display: inline-block;
+    min-height: 100%;
+    @include flex-align(center, center);
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  ul {
+    li {
+      height: 100%;
+      @include flex;
+      a {
+        padding: 6px 15px;
+        font-size: 1.4rem;
+        color: $nav-text;
+        align-self: center;
+      }
+    }
+  }
+}
+.index-navigation-container {
+  @include flex;
+  justify-content: space-between;
+  .index-logo {
+    margin: 0;
+    @include flex-align(center, center);
+  }
+}

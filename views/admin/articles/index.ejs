@@ -1,0 +1,105 @@
+<%- include ("../../../partials/header") %> <%- include
+("../../admin/mobile-nav") %>
+<section class="index-container">
+  <%- include ("../../admin/admin-nav") %>
+  <div class="container">
+    <div class="title-container">
+      <h1>Articles</h1>
+    </div>
+    <div class="filter-search">
+      <input
+        type="text"
+        name="filter-search"
+        id="filter-search"
+        class="browser-default"
+        placeholder="filter search"
+      />
+      <a href="/articles/new" class="btn go-button">Create New Article</a>
+    </div>
+    <div class="article-container">
+      <div class="row">
+        <h1 class="display-message hide"></h1>
+        <% for(const article of articles) { %>
+        <div class="col s12 m6 l6 xl4">
+          <div class="card">
+            <div class="card-image admin-card-image">
+              <img src="<%= article.image.url %>" alt="<%= article.image %>" />
+              <div class="overlay-icon">
+                <a href="/articles/<%= article.slug %>/photo-edit" class="btn"
+                  >update photo</a
+                >
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">
+                <a href="/articles/<%= article.slug %>">
+                  <%= article.title %>
+                </a>
+              </h3>
+              <p><%= article.description %></p>
+              <div class="button-container">
+                <a
+                  href="/articles/<%= article.slug %>/edit"
+                  class="btn go-button"
+                  >Edit</a
+                >
+                <form
+                  action="/articles/<%= article.slug %>?_method=DELETE"
+                  method="POST"
+                >
+                  <button class="btn delete-button">delete</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include ("../../../partials/footer") %>
+
+<script>
+  const articleFilterInput = document.querySelector(
+    ".filter-search #filter-search",
+  );
+  const cardTitles = document.querySelectorAll(".card-content .card-title");
+  const cards = document.querySelectorAll(".article-container .col");
+  const filterMessage = document.querySelector(".display-message");
+
+  articleFilterInput.addEventListener("input", e => {
+    filterCards(e.target.value.toLowerCase().trim());
+  });
+
+  const filterCards = inputFieldLetters => {
+    const articleCardTitles = [...cardTitles];
+    const articleTitleSetToLowerCase = articleCardTitles.map(titles =>
+      titles.innerText.toLowerCase(),
+    );
+    filterOutCardsByTitleName(articleTitleSetToLowerCase, inputFieldLetters);
+  };
+
+  const filterOutCardsByTitleName = (cardTitles, letters) => {
+    let cardArray = [];
+    const articleCards = [...cards];
+    return cardTitles.filter((titleWord, cardTitleIndex) => {
+      if (titleWord.indexOf(letters) > -1) {
+        cardArray.push(articleCards[cardTitleIndex]);
+        articleCards[cardTitleIndex].style.display = "";
+      } else {
+        articleCards[cardTitleIndex].style.display = "none";
+      }
+      displayMessageIfCardsDontMatchInput(cardArray);
+    });
+  };
+
+  const displayMessageIfCardsDontMatchInput = cardTitleArray => {
+    if (cardTitleArray.length > 0) {
+      filterMessage.classList.add("hide");
+    } else {
+      filterMessage.classList.remove("hide");
+      filterMessage.innerText = "Article Not Found!";
+    }
+  };
+</script>

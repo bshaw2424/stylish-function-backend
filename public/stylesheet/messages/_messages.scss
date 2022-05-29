@@ -1,0 +1,77 @@
+// contact show page section
+.message-details {
+  margin: auto;
+  height: 100%;
+  .collection-group_date {
+    text-align: center;
+    @include border(border, 1px, solid, black);
+    padding: 4px;
+    b {
+      font-size: 1.2rem;
+    }
+  }
+  p {
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+    @include flex-direction(column);
+    .message-label {
+      display: inline-block;
+      max-width: 100%;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      text-transform: $text-capitalize;
+      font-weight: 700;
+    }
+  }
+  .message-body {
+    padding: 8px 0;
+  }
+  .message-showpage-buttons {
+    @include flex-align(center, center);
+    padding: 1rem 0;
+    min-width: 100%;
+    border-top: 1px solid $border;
+    a {
+      display: inline-block;
+      max-width: 50%;
+      outline: 1px solid $border;
+    }
+    form {
+      width: 50%;
+      margin-right: 2rem;
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.message-button-container {
+  @include flex;
+  align-items: center;
+  padding: 10px;
+  h1 {
+    margin: 0;
+    width: 100%;
+    padding: 0 0 6px 0;
+    @include text-align(center);
+  }
+
+  form {
+    button {
+      color: $nav-text;
+      cursor: pointer;
+    }
+  }
+}
+h2 {
+  padding: 1rem 0;
+  border: 1px solid $border;
+  margin: 0;
+  @include text-align(center);
+}
+.message-subject {
+  @include flex-align(center, center);
+  margin: 0.75rem 0;
+  font-size: 1.2rem;
+}

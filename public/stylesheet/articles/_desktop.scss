@@ -1,0 +1,46 @@
+.article-section {
+  margin: 2rem 0;
+  h1 {
+    @include text-align(center);
+    font-size: 4rem;
+  }
+  .row {
+    @include flex-direction(column);
+    margin-bottom: 3rem;
+    height: 980px;
+  }
+
+  .article-container {
+    @include flex-direction(column);
+    box-shadow: $box-shadow;
+    margin: 2rem 0;
+    .card {
+      padding: 0;
+      margin: 0;
+      @include flex();
+      .card-image {
+        height: 100%;
+        width: 100%;
+        img {
+          @include images(100%, 100%, cover);
+        }
+      }
+      .card-content {
+        padding: 0 1rem 1.5rem 1rem;
+        .card-title {
+          @include text-align(justify);
+          border: none;
+          margin: 0;
+          padding: 0;
+          h3 {
+            margin: 0;
+            a {
+              font-size: 2rem;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

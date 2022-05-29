@@ -1,0 +1,39 @@
+.article-section {
+  h1 {
+    @include text-align(center);
+    max-width: 100%;
+    font-size: 4rem;
+    padding-top: 1rem;
+  }
+
+  .article-container {
+    margin-bottom: 3rem;
+    .card {
+      @include flex();
+      padding: 0;
+      margin: 0;
+      .card-image {
+        height: 250px;
+        width: 100%;
+        img {
+          @include images(100%, 100%, cover);
+        }
+      }
+      .card-content {
+        padding: 1rem 1rem 1.5rem;
+        .card-title {
+          margin: 0;
+          padding: 0;
+          border: none;
+          @include text-align(justify);
+          h3 {
+            margin: 0;
+            a {
+              font-size: 2.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

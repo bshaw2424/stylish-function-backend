@@ -1,0 +1,38 @@
+.form-group {
+  width: 55%;
+  margin: 0 auto;
+  h1 {
+    text-align: center;
+    padding: 10px;
+    @include border(border-bottom, 1px, solid, rgba(0, 0, 0, 0.2));
+  }
+}
+
+.article-section,
+.product-section {
+  @include flex-direction(column);
+  label {
+    font-size: 1rem;
+    color: black;
+  }
+  textarea {
+    resize: none;
+    height: 8rem;
+    padding: 8px;
+  }
+  input {
+    padding: 8px;
+  }
+}
+
+.article-section {
+  margin-bottom: 0.5rem;
+}
+
+.form-field {
+  margin: 0 0 1rem 0;
+}
+
+.admin-login {
+  height: 100vh;
+}

@@ -1,0 +1,15 @@
+@import "../variables";
+h1 {
+  background-color: #333;
+  @include text-align(center);
+}
+@media screen and (max-width: 480px) {
+  @import "../navigation/mobile-navbar";
+  @import "../showpage/mobile";
+  @import "../static/contactUs-mobile";
+  @import "../admin/tablet";
+  @import "../admin/mobile";
+  @import "../articles/mobile";
+  @import "../index/index-mobile";
+  @import "../messages/messages-mobile";
+}
