@@ -26,7 +26,7 @@ const post = (req, res, next) => {
 
 const logout = (req, res) => {
   req.logout();
-  res.redirect("/login");
+  res.redirect("/");
 };
 
 export { index, login, post, logout };
