@@ -4,8 +4,8 @@ import ArticleModel from "../../models/Article.js";
 
 //const { AsyncError } = require("../../utility/error"); //show all admin articles
 
-const index = async (req, res, next) => {
-  const articles = await ArticleModel.find();
+const index = async (req, res) => {
+  const articles = await ArticleModel.find({});
   res.render("admin/articles/index", { articles });
 };
 
