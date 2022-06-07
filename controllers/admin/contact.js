@@ -19,6 +19,7 @@ const create = (req, res) => res.render("admin/contacts/contactUs");
 
 const post = async (req, res) => {
   const { Message } = req.body;
+  const newMessage = new ContactModel(Message);
 
   // reCaptcha response token
   const reCaptchaBodyResponse = req.body["g-recaptcha-response"];
@@ -28,8 +29,7 @@ const post = async (req, res) => {
   const response = await fetch(verifyCaptchaResponseURL);
   const data = await response.json();
 
-  if (data.success) {
-    const newMessage = new ContactModel(Message);
+  if (data.success === true) {
     await newMessage.save();
   }
   res.redirect("/contact/success");
