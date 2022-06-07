@@ -44,7 +44,7 @@ const showPage = async (req, res, next) => {
   const product = await ProductModel.findOne({ slug: product_slug });
   res.render("admin/products/showPage", {
     product,
-    priceConvert: convertPriceWithComma,
+    convertPriceWithComma,
   });
 };
 
