@@ -29,3 +29,7 @@ function collectionsButtonHideOnHover() {
     });
   }
 }
+
+document.body.addEventListener("load", e => {
+  console.log(e);
+});
