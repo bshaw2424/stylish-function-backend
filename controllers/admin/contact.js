@@ -29,9 +29,9 @@ const post = async (req, res) => {
   const response = await fetch(verifyCaptchaResponseURL);
   const data = await response.json();
 
-  if (data.success === true) {
-    await newMessage.save();
-  }
+  // if (data.success === true) {
+  // }
+  await newMessage.save();
   res.redirect("/contact/success");
 };
 
