@@ -7,7 +7,7 @@ import { config } from "dotenv";
 config();
 
 const index = async (req, res) => {
-  const messages = await ContactModel.find({});
+  const messages = await ContactModel.find({}).sort({ created_on: -1 });
 
   res.render("admin/contacts/contact", {
     messages,
