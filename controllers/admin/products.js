@@ -13,12 +13,8 @@ const Index = async (req, res, next) => {
 
 const New = async (req, res, next) => {
   const { slug } = req.params;
-  const article = await ArticleModel.findOne({
-    slug,
-  });
-  res.render("admin/products/create", {
-    article,
-  });
+  const article = await ArticleModel.findOne({ slug });
+  res.render("admin/products/create", { article });
 }; // creates and add new product associated to article to database
 
 const Create = async (req, res, next) => {
@@ -36,10 +32,10 @@ const Create = async (req, res, next) => {
   product.article = article;
   await product.save();
   await article.save();
-  res.redirect(`/admin/articles/${slug}`);
+  res.redirect(`/articles/${slug}`);
 };
 
-const showPage = async (req, res, next) => {
+const showPage = async (req, res) => {
   const { product_slug } = req.params;
   const product = await ProductModel.findOne({ slug: product_slug });
   res.render("admin/products/showPage", {
@@ -48,7 +44,7 @@ const showPage = async (req, res, next) => {
   });
 };
 
-const Edit = async (req, res, next) => {
+const edit = async (req, res, next) => {
   const { slug, product_slug } = req.params;
   const product = await ProductModel.findOne({ slug: product_slug });
   const article = await ArticleModel.findOne({ slug: slug });
@@ -60,10 +56,10 @@ const photoEdit = async (req, res) => {
   const product = await ProductModel.findOne({ slug: product_slug });
   const article = await ArticleModel.findOne({ slug });
   res.render("admin/products/productPhotoEdit", { article, product });
-}; // updates product body and save to database
+};
 
 const Update = async (req, res, next) => {
-  const { product_slug } = req.params;
+  const { slug, product_slug } = req.params;
   const { Product } = req.body;
   const product = await ProductModel.findOneAndUpdate(
     {
@@ -75,11 +71,11 @@ const Update = async (req, res, next) => {
     },
   );
   await product.save();
-  res.redirect(`/admin/articles/${slug}`);
-}; // updates product photo and save to database
+  res.redirect(`/articles/${slug}`);
+};
 
 const productPhotoUpdate = async (req, res) => {
-  const { slug, product_slug } = req.params; //photo file upload path/filename saved to variables
+  const { slug, product_slug } = req.params;
 
   const url = req.file.path;
   const path = req.file.filename;
@@ -94,14 +90,14 @@ const productPhotoUpdate = async (req, res) => {
   product.image.url = url;
   product.image.filename = path;
   await product.save();
-  res.redirect(`/admin/articles/${slug}`);
-}; // delete product from associated article
+  res.redirect(`/articles/${slug}`);
+};
 
 const Delete = async (req, res, next) => {
   const { slug, product_slug } = req.params;
   await ArticleModel.findOne({ slug: slug });
   await ProductModel.findOneAndDelete({ slug: product_slug });
-  res.redirect(`/admin/articles/${slug}`);
+  res.redirect(`/articles/${slug}`);
 };
 
 export {
@@ -110,7 +106,7 @@ export {
   Create,
   showPage,
   Update,
-  Edit,
+  edit,
   photoEdit,
   productPhotoUpdate,
   Delete,
