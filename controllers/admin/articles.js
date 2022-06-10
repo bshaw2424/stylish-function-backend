@@ -19,7 +19,7 @@ const post = async (req, res) => {
   article.image.url = req.file.path;
   article.image.filename = req.file.filename;
   await article.save();
-  res.redirect("/admin/articles");
+  res.redirect("/articles");
 };
 
 const showPage = async (req, res, next) => {
@@ -27,9 +27,8 @@ const showPage = async (req, res, next) => {
   const articles = await ArticleModel.findOne({
     slug,
   }).populate("products");
-  res.render("admin/articles/showPage", {
-    articles,
-  });
+
+  res.render("admin/articles/showPage", { articles });
 };
 
 const edit = async (req, res) => {
@@ -45,7 +44,7 @@ const update = async (req, res) => {
   const { Article } = req.body;
   const article = await ArticleModel.findOneAndUpdate(
     {
-      slug: slug,
+      slug,
     },
     { ...Article },
     {
@@ -53,7 +52,7 @@ const update = async (req, res) => {
     },
   );
   await article.save();
-  res.redirect("/admin/articles");
+  res.redirect(`/articles`);
 };
 
 const photoEdit = async (req, res) => {
@@ -81,13 +80,13 @@ const photoUpdate = async (req, res) => {
   article.image.url = url;
   article.image.filename = path;
   await article.save();
-  res.redirect("/admin/articles");
+  res.redirect("/articles");
 };
 
 const Delete = async (req, res, next) => {
   const { slug } = req.params;
   await ArticleModel.findOneAndDelete({ slug: slug });
-  res.redirect("/admin/articles");
+  res.redirect("/articles");
 };
 
 export {
