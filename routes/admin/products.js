@@ -16,7 +16,7 @@ import {
   Create,
   showPage,
   Update,
-  Edit,
+  edit,
   photoEdit,
   productPhotoUpdate,
   Delete,
@@ -29,7 +29,7 @@ adminRouter
   .get(showPage)
   .patch(upload.single("Product[image]"), Update)
   .delete(Delete); //product update routes
-adminRouter.get("/:product_slug/edit", Edit);
+adminRouter.get("/:product_slug/edit", edit);
 adminRouter.get("/:product_slug/photo-edit", photoEdit); //product photo update
 adminRouter.patch(
   "/:product_slug/product-photo",

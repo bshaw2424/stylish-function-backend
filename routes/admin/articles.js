@@ -29,7 +29,7 @@ adminRouter.get("/new", checkAuthentication, create);
 adminRouter
   .route("/:slug")
   .get(showPage)
-  .patch(checkAuthentication, update)
+  .put(checkAuthentication, update)
   .delete(checkAuthentication, Delete); //edit routes
 adminRouter.get("/:slug/edit", checkAuthentication, edit);
 adminRouter.get("/:slug/photo-edit", checkAuthentication, photoEdit);
