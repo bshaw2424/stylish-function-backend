@@ -52,7 +52,7 @@ const update = async (req, res) => {
     },
   );
   await article.save();
-  res.redirect(`/articles`);
+  res.redirect("/articles");
 };
 
 const photoEdit = async (req, res) => {
