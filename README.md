@@ -12,7 +12,7 @@ Some road blocks I encountered and learned
 - Dealing with bots was an issued which lead me to researching and implementing Google Recaptcha V2.
 
 My github account:
-Backend code => https://www.github.com/bshaw2424/stylish-function-backend
+Backend code => https://www.github.com/bshaw2424/stylish-function-backend.
 Login functionality is currently disabled to fix passport functionality bugs.
 To get started go to https://admin.stylishfunction.com/dashboard to view the backend section.
 The admin backend provides CRUD functionlity for articles, images, and messages sections for the front end.
