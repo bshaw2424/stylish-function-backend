@@ -30,6 +30,7 @@ function collectionsButtonHideOnHover() {
   }
 }
 
-document.body.addEventListener("load", e => {
-  console.log(e);
+const button = document.querySelector("[data-submit]");
+button.addEventListener("load", function () {
+  alert("this page has loaded");
 });

@@ -1,6 +1,5 @@
 "use strict";
 
-// const subdomain = require("express-subdomain");
 import express from "express";
 const app = express();
 
@@ -40,5 +39,4 @@ adminRouter.patch(
   photoUpdate,
 );
 
-// app.use(subdomain("admin", adminRouter));
 export default adminRouter;
