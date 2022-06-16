@@ -21,7 +21,7 @@ const post = (req, res) => {
   const redirectUrl = req.session.returnTo || "/dashboard";
 
   delete req.session.returnTo;
-  res.redirect(redirectUrl);
+  res.redirect("/dashboard");
 };
 
 const logout = (req, res) => {
