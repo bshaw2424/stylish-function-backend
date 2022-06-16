@@ -1,6 +1,5 @@
 "use strict";
 
-//const subdomain = require("express-subdomain");
 import express from "express";
 const app = express();
 
@@ -13,11 +12,10 @@ import { index, login, post, logout } from "../../controllers/admin/admin.js";
 adminRouter.get("/dashboard", checkAuthentication, index);
 adminRouter.get("/", login);
 adminRouter.post(
-  "/",
+  "/login",
   passport.authenticate("local", { failureRedirect: "/" }),
   post,
 );
 adminRouter.get("/logout", logout);
 
-//app.use(subdomain("admin", adminRouter));
 export default adminRouter;

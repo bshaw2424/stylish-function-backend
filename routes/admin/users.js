@@ -1,6 +1,5 @@
 "use strict";
 
-//const subdomain = require("express-subdomain");
 import express from "express";
 const app = express();
 
@@ -13,5 +12,4 @@ adminRouter.get("/", index);
 adminRouter.get("/new", create);
 adminRouter.post("/", post);
 
-//app.use(subdomain("admin", adminRouter));
 export default adminRouter;
