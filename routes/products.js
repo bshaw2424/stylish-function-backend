@@ -7,17 +7,7 @@ const { AsyncError } = require("../utility/error");
 const multer = require("multer");
 const { storage } = require("../cloudinary/index");
 const upload = multer({ storage });
-// {
-//   index,
-//   New,
-//   Create,
-//   showPage,
-//   update,
-//   edit,
-//   photoEdit,
-//   productPhotoUpdate,
-//   delete,
-// }
+
 const productRoutes = require("../controllers/products");
 
 router.get("/", productRoutes.index);
