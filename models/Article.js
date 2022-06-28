@@ -1,10 +1,12 @@
 "use strict";
 
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const { Schema, model } = mongoose;
 
-import slugify from "slugify";
+const slugify = require("slugify");
+
+const Product = require("./Product");
 
 const Articles = new Schema({
   title: {
@@ -46,5 +48,4 @@ Articles.pre("save", function (next) {
   next();
 });
 
-const Article = model("Article", Articles);
-export default Article;
+module.exports = model("Article", Articles);

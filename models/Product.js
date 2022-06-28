@@ -1,12 +1,14 @@
 "use strict";
 
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const { Schema, model } = mongoose;
 
-import slugify from "slugify";
+const slugify = require("slugify");
 
-const Products = new Schema({
+const Article = require("./Article");
+
+const productSchema = new Schema({
   title: {
     type: String,
     trim: true,
@@ -38,11 +40,11 @@ const Products = new Schema({
     ref: "Article",
   },
 });
-Products.pre("save", function (next) {
+productSchema.pre("save", function (next) {
   this.slug = slugify(this.title, {
     lower: true,
   });
   next();
 });
-const Product = model("Product", Products);
-export default Product;
+
+module.exports = model("Product", productSchema);

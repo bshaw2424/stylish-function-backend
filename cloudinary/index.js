@@ -1,18 +1,17 @@
 "use strict";
 
-import cloudinary from "cloudinary";
-import { config } from "dotenv";
-// config method from dotenv
-config();
-import { CloudinaryStorage } from "multer-storage-cloudinary";
-import express from "express";
-import multer from "multer";
+const cloudinary = require("cloudinary").v2;
+require("dotenv").config();
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const express = require("express");
+const multer = require("multer");
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUD_API_KEY,
   api_secret: process.env.CLOUD_SECRET,
 });
+
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {
@@ -21,4 +20,4 @@ const storage = new CloudinaryStorage({
   },
 });
 
-export { cloudinary, storage, multer };
+module.exports = { cloudinary, storage };

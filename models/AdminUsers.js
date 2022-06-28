@@ -1,10 +1,10 @@
 "use strict";
 
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const { Schema, model } = mongoose;
 
-import passportLocalMongoose from "passport-local-mongoose";
+const passportLocalMongoose = require("passport-local-mongoose");
 
 const User = new Schema({
   username: {
@@ -15,4 +15,4 @@ const User = new Schema({
 });
 User.plugin(passportLocalMongoose);
 
-export default model("user", User);
+module.exports = model("user", User);

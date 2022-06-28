@@ -1,9 +1,6 @@
 "use strict";
-import { config } from "dotenv";
-import mongoose from "mongoose";
-
-// config method from dotenv
-config();
+require("dotenv").config();
+const mongoose = require("mongoose");
 
 mongoose.Promise = global.Promise;
 const MONGODB_URL = `mongodb+srv://bshaw-stylefunction:${process.env.DB_PASSWORD}@cluster0.3kkqi.mongodb.net/${process.env.DB_USER}`;
@@ -15,4 +12,4 @@ const databaseConnection = mongoose
   .then(() => console.log("Database connected"))
   .catch(err => console.log(`Error: ${err.message}`));
 
-export default databaseConnection;
+module.exports = databaseConnection;

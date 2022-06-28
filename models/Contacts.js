@@ -1,6 +1,6 @@
 "use strict";
 
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const { Schema, model } = mongoose;
 
@@ -31,4 +31,4 @@ const contactSchema = new Schema({
   },
 });
 
-export default model("contact", contactSchema);
+module.exports = model("contact", contactSchema);

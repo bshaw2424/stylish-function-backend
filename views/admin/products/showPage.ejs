@@ -12,7 +12,7 @@
           <h3 class="card-title"><%= product.title %></h3>
           <span class="card-price">
             <strong>
-              $<%= convertPriceWithComma(product.price.toFixed(2) )%>
+              $<%= convertPriceWithComma(product.price.toFixed(2))%>
             </strong>
           </span>
         </div>
@@ -24,6 +24,9 @@
             target="_blank"
           >
             get more information
+          </a>
+          <a class="btn go-button" href="/articles/<%= article.slug %>">
+            Go back
           </a>
         </div>
       </div>
