@@ -6,22 +6,14 @@ const router = express.Router();
 //const { AsyncError } = require("../../utility/error");
 const { checkAuthentication } = require("../middleware");
 
-const {
-  index,
-  create,
-  post,
-  descSort,
-  ascSort,
-  showPage,
-  Delete,
-} = require("../controllers/contact");
+const contactRoutes = require("../controllers/contact");
 
-router.get("/", checkAuthentication, index);
-router.get("/new", create);
-router.post("/", post);
-router.get("/sortDesc/:sort", descSort);
-router.get("/sortAsc/:sort", ascSort);
-router.get("/:id", showPage);
-router.delete("/:id", Delete);
+router.get("/", checkAuthentication, contactRoutes.index);
+router.get("/new", contactRoutes.create);
+router.post("/", contactRoutes.post);
+router.get("/sortDesc/:sort", contactRoutes.descSort);
+router.get("/sortAsc/:sort", contactRoutes.ascSort);
+router.get("/:id", contactRoutes.showPage);
+router.delete("/:id", contactRoutes.delete);
 
 module.exports = router;
