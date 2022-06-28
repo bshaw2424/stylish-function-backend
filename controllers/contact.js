@@ -53,7 +53,7 @@ module.exports.showPage = async (req, res) => {
   res.render("admin/contacts/contactShowPage", { message });
 };
 
-module.exports.Delete = async (req, res) => {
+module.exports.delete = async (req, res) => {
   const { id } = req.params;
   const deleteMessage = await ContactModel.findByIdAndDelete(id);
   res.redirect("/messages");
