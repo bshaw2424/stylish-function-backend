@@ -15,6 +15,7 @@ const contactSchema = new Schema({
   },
   email: {
     type: String,
+    lowercase: true,
     required: true,
   },
   message: {
