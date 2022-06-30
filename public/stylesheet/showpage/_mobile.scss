@@ -72,6 +72,7 @@
     .button-container {
       min-width: 100%;
       margin: 1rem 0;
+      @include flex-direction(column);
       a {
         display: inline-block;
         min-width: 100%;
