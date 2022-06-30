@@ -2,6 +2,7 @@
 
 const fetch = require("node-fetch");
 const ContactModel = require("../models/Contacts");
+const { convertEmailToLowerCase } = require("../functions");
 require("dotenv").config();
 
 module.exports.index = async (req, res) => {
@@ -50,7 +51,10 @@ module.exports.descSort = async (req, res) => {
 module.exports.showPage = async (req, res) => {
   const { id } = req.params;
   const message = await ContactModel.findById(id);
-  res.render("admin/contacts/contactShowPage", { message });
+  res.render("admin/contacts/contactShowPage", {
+    message,
+    convertEmailToLowerCase,
+  });
 };
 
 module.exports.delete = async (req, res) => {
