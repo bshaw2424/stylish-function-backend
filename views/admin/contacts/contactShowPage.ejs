@@ -23,7 +23,7 @@
         <p class="contact-email">
           <a href="mailto:<%= message.email %>"
             ><span class="message-label"><b>email:</b></span> <%=
-            message.email.toLowerCase() %>
+            convertEmailToLowerCase(message.email) %>
           </a>
         </p>
       </div>
