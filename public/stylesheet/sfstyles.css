@@ -2275,6 +2275,12 @@ h1 {
   .index-container .container .card-content .product-description {
     margin-top: 1rem;
   }
+  .button-container {
+    margin: 0 0 2rem 0;
+  }
+  .button-container a {
+    display: none;
+  }
   .message-page {
     display: -webkit-box;
     display: -ms-flexbox;
