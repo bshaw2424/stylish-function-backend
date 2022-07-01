@@ -4138,6 +4138,31 @@ h1 {
   .index-container .container .card-content .card-details {
     border-bottom: 1px solid #333;
   }
+  .index-container .button-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+  }
+  .index-container .button-container a:first-child {
+    margin-bottom: 1rem;
+  }
+  .footer-section .footer-navigation ul, .footer-section .footer-navigation .copyright {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
   .container {
     margin-top: 2rem;
   }
