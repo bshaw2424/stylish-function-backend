@@ -3094,6 +3094,9 @@ h1 {
   .index-container .container .card-content .card-details {
     border-bottom: 1px solid #333;
   }
+  .index-container .button-container a:first-child {
+    margin-right: 1.5rem;
+  }
   .message-center-header {
     min-height: 815px;
   }
@@ -3767,6 +3770,9 @@ h1 {
   }
   .index-container .container .card-content .card-details {
     border-bottom: 1px solid #333;
+  }
+  .index-container .button-container a:first-child {
+    margin-right: 1.5rem;
   }
   .title-container {
     background: none;
