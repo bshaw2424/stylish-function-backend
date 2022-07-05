@@ -13,10 +13,15 @@ Some road blocks I encountered and learned
 
 My github account:
 Backend code => https://www.github.com/bshaw2424/stylish-function-backend.
-Login functionality is currently disabled to fix passport functionality bugs.
-To get started go to https://admin.stylishfunction.com/dashboard to view the backend section.
-The admin backend provides CRUD functionlity for articles, images, and messages sections for the front end.
-Use npm run start command to start application.
+
+
+
+To get started go to https://admin.stylishfunction.com/ to get to login page.
+# Login = username: admin,  password: password  (case sensitive)
+
+# The admin backend provides CRUD functionlity for articles, images, and messages sections for the front end.
+
+# Use npm run start command to start application.
 
 Tools use to developed my project:
 
