@@ -10,9 +10,11 @@ module.exports.index = async (req, res) => {
   res.render("admin/adminIndex", { articles });
 };
 
-module.exports.login = (req, res) => {
+module.exports.loginForm = (req, res) => {
   res.render("admin/login");
 };
+
+module.exports.login = (req, res) => res.redirect("/");
 
 module.exports.logout = (req, res) => {
   req.logout(function (err) {
