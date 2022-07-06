@@ -14,7 +14,7 @@ module.exports.loginForm = (req, res) => {
   res.render("admin/login");
 };
 
-module.exports.login = (req, res) => res.redirect("/");
+//module.exports.login = (req, res) => res.redirect("/");
 
 module.exports.logout = (req, res) => {
   req.logout(function (err) {
