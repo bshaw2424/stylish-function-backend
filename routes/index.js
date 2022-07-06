@@ -15,10 +15,9 @@ router.post(
   passport.authenticate("local", {
     failureRedirect: "/",
     successRedirect: "/dashboard",
-    login,
-  }),
+  })
 );
-router.get("/dashboard", checkAuthentication, index);
+router.get("/dashboard", index);
 router.get("/logout", logout);
 
 module.exports = router;
