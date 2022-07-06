@@ -16,15 +16,14 @@ router.get("/", articleRoute.index);
 router.get("/new", articleRoute.create);
 router.post("/", upload.single("Article[image]"), articleRoute.post);
 router.get("/:slug", articleRoute.showPage);
-router.get("/:slug/edit", checkAuthentication, articleRoute.edit);
-router.put("/:slug", checkAuthentication, articleRoute.update);
-router.get("/:slug/photo-edit", checkAuthentication, articleRoute.photoEdit);
+router.get("/:slug/edit", articleRoute.edit);
+router.put("/:slug", articleRoute.update);
+router.get("/:slug/photo-edit", articleRoute.photoEdit);
 router.patch(
   "/:slug/photo",
   upload.single("Article[image]"),
-  checkAuthentication,
-  articleRoute.photoUpdate,
+  articleRoute.photoUpdate
 );
-router.delete("/:slug", checkAuthentication, articleRoute.delete);
+router.delete("/:slug", articleRoute.delete);
 
 module.exports = router;
