@@ -2971,6 +2971,24 @@ h1 {
     color: gray;
     text-decoration: underline;
   }
+  .admin-mobile-nav .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .admin-mobile-nav .container .material-icons {
+    padding: 0;
+  }
+  .admin-mobile-nav .container .admin-mobile-nav_links li {
+    padding-left: 0;
+    border: none;
+  }
   .image-update {
     width: 100%;
     margin: 3.5rem auto;
@@ -3645,6 +3663,24 @@ h1 {
   .admin-mobile-nav_links li a:not(.btn):hover {
     color: gray;
     text-decoration: underline;
+  }
+  .admin-mobile-nav .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .admin-mobile-nav .container .material-icons {
+    padding: 0;
+  }
+  .admin-mobile-nav .container .admin-mobile-nav_links li {
+    padding-left: 0;
+    border: none;
   }
   .image-update {
     width: 100%;

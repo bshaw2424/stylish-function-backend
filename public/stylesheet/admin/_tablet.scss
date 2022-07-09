@@ -157,6 +157,21 @@
   }
 }
 
+.admin-mobile-nav {
+  .container {
+    .material-icons {
+      padding: 0;
+    }
+    @include flex-align(space-between, center);
+    .admin-mobile-nav_links {
+      li {
+        padding-left: 0;
+        border: none;
+      }
+    }
+  }
+}
+
 .image-update {
   width: 100%;
   margin: 3.5rem auto;
