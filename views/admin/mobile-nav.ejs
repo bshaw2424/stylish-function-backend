@@ -21,11 +21,11 @@
   const slider = document.querySelector(".slider-overlay");
 
   adminHamburgerNav.addEventListener("click", () => {
-    adminNavLinks.classList.toggle("hidden");
-    if (adminNavLinks.classList.contains("hidden")) {
-      slider.style.display = "none";
-    } else {
+    adminNavLinks.classList.toggle("none");
+    if (adminNavLinks.classList.contains("none")) {
       slider.style.display = "block";
+    } else {
+      slider.style.display = "none";
       slider.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
     }
   });
