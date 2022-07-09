@@ -1,8 +1,3 @@
-// .index-navigation-container,
-// .index-navigation-links {
-//   @include flex-direction(column);
-// }
-
 .index-navigation {
   position: relative;
   @include flex-space-between(space-between, center);
@@ -11,10 +6,6 @@
   left: 0;
   background-color: $white;
   z-index: 3;
-
-  .index-navigation-container {
-    height: auto;
-  }
 
   i.material-icons {
     display: inline-block;
@@ -28,6 +19,7 @@
   }
 
   .index-navigation-container {
+    height: auto;
     @include flex-align(center, center);
     width: 100%;
     .logo {

@@ -62,6 +62,22 @@
   }
 }
 
+.admin-mobile-nav_links {
+  @include flex;
+}
+
+.admin-mobile-nav {
+  .hamburger {
+    display: none;
+  }
+  .admin-mobile-nav_title {
+    width: 0;
+  }
+  .container {
+    @include flex-align(space-between, center);
+  }
+}
+
 // products section
 .product-count {
   padding-left: 0.75rem;

@@ -12,10 +12,6 @@
   background-color: $white;
   z-index: 3;
 
-  .index-navigation-container {
-    height: auto;
-  }
-
   i.material-icons {
     display: inline-block;
     color: #333;
@@ -28,6 +24,7 @@
   }
 
   .index-navigation-container {
+    height: auto;
     @include flex-align(center, center);
     width: 100%;
     .index-navigation-links {
