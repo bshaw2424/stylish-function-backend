@@ -4023,6 +4023,9 @@ h1 {
     padding: 0;
     margin: 0;
   }
+  .admin-mobile-nav .container .material-icons {
+    padding-left: 1rem;
+  }
   .admin-mobile-nav .slider-overlay {
     position: absolute;
     top: 5rem;
