@@ -10,7 +10,7 @@ module.exports.index = async (req, res) => {
 
   res.render("admin/contacts/contact", {
     messages,
-    sortMessage: "All Clear...No Messages",
+    contactLengthMessage: "All Clear...No Messages",
   });
 };
 
