@@ -29,8 +29,3 @@ function collectionsButtonHideOnHover() {
     });
   }
 }
-
-const button = document.querySelector("[data-submit]");
-button.addEventListener("load", function () {
-  alert("this page has loaded");
-});

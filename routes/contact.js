@@ -9,7 +9,6 @@ const { checkAuthentication } = require("../middleware");
 const contactRoutes = require("../controllers/contact");
 
 router.get("/", contactRoutes.index);
-router.get("/new", contactRoutes.create);
 router.post("/", contactRoutes.post);
 router.get("/sortDesc/:sort", contactRoutes.descSort);
 router.get("/sortAsc/:sort", contactRoutes.ascSort);

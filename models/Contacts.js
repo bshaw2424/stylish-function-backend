@@ -28,7 +28,7 @@ const contactSchema = new Schema({
   },
   created_on: {
     type: Date,
-    default: new Date(),
+    default: Date.now(),
   },
 });
 
