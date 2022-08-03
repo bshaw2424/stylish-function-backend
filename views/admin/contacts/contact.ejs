@@ -38,7 +38,6 @@
                 >
               </li>
             </ul>
-            <!-- <label for="message-filter">Sort By:</label> -->
           </div>
         </div>
       </div>
@@ -59,9 +58,7 @@
               <span class="message"> <%= message.subject %></span>
             </div>
             <div class="collection-group collection-group_date">
-              <span class="date"
-                ><%= message.created_on.toLocaleDateString() %></span
-              >
+              <%= new Date(message.created_on).toLocaleDateString() %>
             </div>
             <form
               class="message-delete-button"
@@ -88,18 +85,8 @@
     <!-- end of collection container -->
   </div>
 </section>
+
 <!-- <script src="../../../js/scripts.js"></script> -->
-<!-- <script>
-  const dropDownButton = document.querySelector(".dropdown-trigger");
-  const menu = document.querySelector("#message-filter");
-  dropDownButton.addEventListener("click", filterMenuDropDown);
-  function filterMenuDropDown (){
-   if (menu.classList.contains("hide")) {
-      menu.classList.remove("hide");
-    } else {
-      menu.classList.add("hide");
-    }
-  }
-</script> -->
+<script></script>
 
 <%- include ("../../../partials/footer") %>
