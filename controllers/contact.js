@@ -6,6 +6,44 @@ const { convertEmailToLowerCase } = require("../functions");
 require("dotenv").config();
 
 module.exports.index = async (req, res) => {
+  // const fetchContactsUrlfromDatabase =
+  //   "https://data.mongodb-api.com/app/data-hsqwk/endpoint/data/v1/action/find";
+
+  // const fetchConfigurationToGetContacts = {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     "Access-Control-Request-Headers": "*",
+  //     "api-key": process.env.MONGO_KEY,
+  //     Accept: "application/json",
+  //   },
+  //   body: JSON.stringify({
+  //     collection: "contacts",
+  //     database: "affiliate_products",
+  //     dataSource: "Cluster0",
+  //   }),
+  // };
+
+  // try {
+  //   const response = await fetch(
+  //     fetchContactsUrlfromDatabase,
+  //     fetchConfigurationToGetContacts,
+  //   );
+  //   if (!response.ok) {
+  //     throw new Error();
+  //   }
+  //   const messages = await response.json();
+  //   const { documents } = messages;
+  //   const contactDataResponse = documents;
+
+  //   res.render("admin/contacts/contact", {
+  //     contactDataResponse,
+  //     contactLengthMessage: "All Clear...No Messages",
+  //   });
+  // } catch (error) {
+  //   console.log(error.message);
+  // }
+
   const messages = await ContactModel.find({}).sort({ created_on: -1 });
 
   res.render("admin/contacts/contact", {
@@ -14,23 +52,7 @@ module.exports.index = async (req, res) => {
   });
 };
 
-module.exports.create = (req, res) => res.render("admin/contacts/contactUs");
-
-module.exports.post = async (req, res) => {
-  const { Message } = req.body;
-  const newMessage = new ContactModel(Message);
-
-  // reCaptcha response token
-  const reCaptchaBodyResponse = req.body["g-recaptcha-response"];
-
-  const verifyCaptchaResponseURL = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${reCaptchaBodyResponse}`;
-
-  const response = await fetch(verifyCaptchaResponseURL);
-  await response.json();
-
-  await newMessage.save();
-  res.redirect("/contact/success");
-};
+module.exports.post = async (req, res) => {};
 
 module.exports.ascSort = async (req, res) => {
   const ascendingSort = await ContactModel.find({}).sort({ created_on: 1 });
