@@ -16,10 +16,6 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/AdminUsers");
 const PORT = process.env.PORT || 5000;
 
-//replicate the functionality of __dirname - es6 module
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-
 // admin routes
 const adminIndexRoutes = require("./routes/index");
 const adminArticleRoutes = require("./routes/articles");
